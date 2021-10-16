@@ -1,10 +1,11 @@
 module.exports.signUpErrors = (err) => {
     let errors = { nom: "", prenom: "", poste: "", email: "", password: "" };
 
-    if (err.message.includes("email")) errors.email = "Email incorrect";
+    if (err.message.includes("nom")) errors.nom = "Saisir un nom"
 
-    if (err.message.includes("password"))
-        errors.password = "Le mot de passe doit faire 8 caractères minimum";
+    if (err.message.includes("prenom")) errors.prenom = "Saisir un prenom"
+
+    if (err.message.includes("poste")) errors.poste = "Saisir un poste"
 
     if (err.code === 11000 && Object.keys(err.keyValue)[0].includes("email"))
         errors.email = "Cet email est déjà enregistré";
@@ -19,7 +20,7 @@ module.exports.signInErrors = (err) => {
         errors.email = "Email inconnu";
 
     if (err.message.includes('password'))
-        errors.password = "Le mot de passe ne correspond pas"
+        errors.password = "Mot de passe incorrect"
 
     return errors;
 }

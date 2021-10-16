@@ -14,12 +14,13 @@ const cors = require('cors')
 const corsOptions = {
   origin: process.env.CLIENT_URL,
   credentials: true,
-  'allowedHeaders': ['sessionId', 'Content-Type'],
-  'exposedHeaders': ['sessionId'],
-  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  'preflightContinue': false
+  allowedHeaders: ['sessionId', 'Content-Type'],
+  exposedHeaders: ['sessionId'],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false
 }
-app.use(cors({ corsOptions }))
+
+app.use(cors(corsOptions))
 
 // FICHIERS DE ROUTES
 const userRoutes = require('./routes/user.routes') 
@@ -52,9 +53,6 @@ app.use('/app', (req, res) => { //Line 9
     express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT'
   }); 
 }); //Line 11
-
-
-
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
