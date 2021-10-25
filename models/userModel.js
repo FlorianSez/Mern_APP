@@ -33,15 +33,7 @@ const userSchema = new mongoose.Schema(
         },
         photo: {
             type: String,
-            default: './uploads/profil/random-user.png'
-        },
-        reunion: {
-            type: [
-                {
-                    reunionId: String,
-                    accept: Boolean
-                }
-            ],
+            default: './upload/profil/random-user.png'
         },
         conv: {
             type: [String]
@@ -49,7 +41,15 @@ const userSchema = new mongoose.Schema(
         favoris: {
             type: [String]
         },
+        admin: {
+            type: Boolean,
+            default: false
+        },
         accept: {
+            type: Boolean,
+            default: false
+        },
+        reject: {
             type: Boolean,
             default: false
         }

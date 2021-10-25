@@ -1,14 +1,17 @@
 import React, { useContext } from "react";
 import Log from "../components/Log";
-import { UidContext } from "../components/AppContext";
+import { UserContext } from "../components/AppContext";
+import '../style/Form.css'
+import '../style/Update.css'
+import Update from "../components/Profil/Update";
 
 const Profil = () => {
-  const user = useContext(UidContext);
+  const user = useContext(UserContext);
 
   return (
     <div className="profil-page">
       {user ? (
-        <h1>UPDATE PROFIL PAGE</h1>
+        <Update/>
       ) : (
         <div className="log-container">
           <Log />

@@ -9,6 +9,15 @@ module.exports.getAllUsers = async (req, res) => {
     res.status(200).json(users)
 }
 
+
+
+module.exports.getUsersNotAccept = async (req, res) => {
+    const users = await UserModel.find({
+        accept: {$in: false}
+    })
+    res.status(200).json(users)
+}
+
 /* --------------------------------------------------------- */
 
 module.exports.userInfo = (req, res) => {
@@ -16,7 +25,7 @@ module.exports.userInfo = (req, res) => {
         return res.status(400).send('ID unknown ' + req.params.id)
 
     UserModel.findById(req.params.id, (err, docs) => {
-        if (!err) res.send(docs)
+        if (!err) res.status(200).send(docs)
         else console.log('ID unknown ' + req.params.id)
     }).select('-Password');
 }
@@ -34,7 +43,9 @@ module.exports.updateUser = async (req, res) => {
                 $set: {
                     prenom: req.body.prenom,
                     nom: req.body.nom,
-                    photo: req.body.photo
+                    photo: req.body.photo,
+                    accept: req.body.accept,
+                    reject: req.body.reject
                 },
             },
             { new: true, upsert: true, setDefaultsOnInsert: true },

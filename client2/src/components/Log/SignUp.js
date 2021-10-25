@@ -63,12 +63,14 @@ const SignUp = () => {
         <>
           <SignIn />
           <h4 className="register-success">
-            Enregistrement du compte réussi, veuillez vous connecter
+            Création réussi, en attente de la réponse de l'admin
           </h4>
         </>
       ) : (
-        <form action="" onSubmit={handleRegister} id="sign-up-form">
-          <label htmlFor="nom">Nom</label>
+        <div>
+      <h5>S'inscrire</h5>
+        <form action="" onSubmit={handleRegister} id="signUpForm">
+          <label className='label-signup' htmlFor="nom">Nom</label>
           <br />
           <input
             type="text"
@@ -76,12 +78,13 @@ const SignUp = () => {
             id="nom"
             onChange={(e) => setNom(e.target.value)}
             value={nom}
+            placeholder='Sezille...'
           ></input>
           <div className="nom error"></div>
 
           <br />
 
-          <label htmlFor="prenom">Prenom</label>
+          <label className='label-signup' htmlFor="prenom">Prenom</label>
           <br />
           <input
             type="text"
@@ -89,12 +92,13 @@ const SignUp = () => {
             id="prenom"
             onChange={(e) => setPrenom(e.target.value)}
             value={prenom}
+            placeholder='Florian...'
           ></input>
           <div className="prenom error"></div>
 
           <br />
 
-          <label htmlFor="poste">Poste</label>
+          <label className='label-signup' htmlFor="poste">Poste</label>
           <br />
           <input
             type="text"
@@ -102,12 +106,13 @@ const SignUp = () => {
             id="poste"
             onChange={(e) => setPoste(e.target.value)}
             value={poste}
+            placeholder='Directeur...'
           ></input>
           <div className="poste error"></div>
 
           <br />
 
-          <label htmlFor="email">Email</label>
+          <label className='label-signup' htmlFor="email">Email</label>
           <br />
           <input
             type="text"
@@ -115,12 +120,13 @@ const SignUp = () => {
             id="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
+            placeholder='florian@gmail.com...'
           ></input>
           <div className="email error"></div>
 
           <br />
 
-          <label htmlFor="nom">Mot de passe</label>
+          <label className='label-signup' htmlFor="nom">Mot de passe</label>
           <br />
           <input
             type="password"
@@ -128,6 +134,7 @@ const SignUp = () => {
             id="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
+            placeholder='Florian01!'
           ></input>
           <div className="password error"></div>
 
@@ -135,6 +142,7 @@ const SignUp = () => {
 
           <input type="submit" value="Valider inscription" />
         </form>
+        </div>
       )}
     </>
   );

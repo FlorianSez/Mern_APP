@@ -24,7 +24,7 @@ const SignIn = () => {
       },
     })
       .then((res) => {
-          console.log(res);
+        console.log(res);
         if (res.data.errors) {
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;
@@ -38,31 +38,39 @@ const SignIn = () => {
   };
 
   return (
-    <form action="" onSubmit={handleLogin} id="signInForm">
-      <label htmlFor="email">Email</label>
-      <br />
-      <input
-        type="text"
-        name="email"
-        id="email"
-        onChange={(e) => setemail(e.target.value)}
-        value={email}
-      />
-      <div className="email error"></div>
-      <br />
-      <label htmlFor="password">Mot de passe</label>
-      <br />
-      <input
-        type="password"
-        name="password"
-        id="password"
-        onChange={(e) => setpassword(e.target.value)}
-        value={password}
-      />
-      <div className="password error"></div>
-      <br />
-      <input type="submit" value="Se connecter" />
-    </form>
+    <div>
+      <h5>Se connecter</h5>
+      <form action="" onSubmit={handleLogin} id="signInForm">
+        <label className="label-signin" htmlFor="email">
+          Email
+        </label>
+        <br />
+        <input
+          type="text"
+          name="email"
+          id="email"
+          onChange={(e) => setemail(e.target.value)}
+          value={email}
+        />
+        <div className="email error"></div>
+        <br />
+        <label className="label-signin" htmlFor="password">
+          Mot de passe
+        </label>
+        <br />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          onChange={(e) => setpassword(e.target.value)}
+          value={password}
+        />
+        <div className="password error"></div>
+        <br />
+        <div className="admin-error"></div>
+        <input type="submit" value="Se connecter" />
+      </form>
+    </div>
   );
 };
 

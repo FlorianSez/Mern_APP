@@ -6,8 +6,12 @@ const reunionSchema = new mongoose.Schema(
             type: String
         },
         participant: {
-            type: [],
-            required : true
+            type: [
+                {
+                    membre: String,
+                    accept: Boolean
+                }
+            ],
         },
         nom: {
             type: String,
@@ -17,16 +21,9 @@ const reunionSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        /*date:{
+        date:{
             type: Date
         },
-        heure: {
-            type: cloc
-        }*/
-        accept: {
-            type: Boolean,
-            default: false
-        }
     },
     {
         timestamps: true

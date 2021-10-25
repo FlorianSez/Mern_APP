@@ -10,7 +10,7 @@ module.exports.uploadProfil = async (req, res) => {
         req.file.detectedMimeType !== 'image/jpeg' &&
         req.file.detectedMimeType !== 'image/png') throw Error("Invalid File")
 
-        if (req.file.size > 500000) throw Error("Too much big file")
+        if (req.file.size > 5000000) throw Error("Too much big file")
     } catch (err) {
         const errors = uploadErrors(err)
         return res.status(201).json({errors})
@@ -21,7 +21,7 @@ module.exports.uploadProfil = async (req, res) => {
     await pipeline(
         req.file.stream,
         fs.createWriteStream(
-            `${__dirname}/../client/public/upload/profil/${fileName}`
+            `${__dirname}/../client2/public/upload/profil/${fileName}`
         )
     )
 

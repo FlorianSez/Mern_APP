@@ -1,0 +1,56 @@
+.connection-form{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 80px;
+}
+
+#formulaires {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+  width: 300px;
+  padding: 20px, 20px, 20px, 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 2px solid #5d7f86;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.533);
+  padding: 15px 10px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.553);
+}
+
+
+#boutons {
+    float: left;
+  text-align: center;
+  list-style: none;
+}
+
+#boutons li {
+  border: 2px solid #5d7f86;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.539);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.637);
+  padding: 10px;
+  margin: 20px;
+}
+#boutons li:hover {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.637);
+  transition: all 0.4s;
+}
+
+#formulaires input {
+  background-color: rgba(229, 229, 206, 0);
+  border: none;
+  border-bottom: 2px solid #5d7f86;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+#formulaire label {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

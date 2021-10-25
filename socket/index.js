@@ -1,0 +1,46 @@
+const io = require("socket.io")(8900, {
+  cors: {
+    origin: "http://localhost:3000",
+  },
+});
+
+let users = [];
+
+const addUser = (userId, socketId) => {
+  !users.some((user) => user.userId === userId) &&
+    users.push({ userId, socketId });
+};
+
+const removeUser = (socketId) => {
+  users = users.filter((user) => user.socketId !== socketId);
+};
+
+const getUser = (userId) => {
+  return users.find((user) => user.userId === userId);
+};
+
+io.on("connection", (socket) => {
+  // Pour la connection
+  console.log("Un utilisateur est connecté");
+  // Prend usersId et le socketId à chaque connection
+  socket.on("sendUser", (userId) => {
+    addUser(userId, socket.id);
+    io.emit("getUsers", users);
+  });
+
+  // Pour envoyer des messages
+  socket.on("sendMessage", ({ senderId, receiverId, text }) => {
+    const user = getUser(receiverId);
+    io.to(user.socketId).emit("getMessage", {
+      senderId,
+      text,
+    });
+  });
+
+  // Pour se déconnecter
+  socket.on("disconnect", () => {
+    console.log("Utilisateur déconnecté");
+    removeUser(socket.id);
+    io.emit("getUsers", users);
+  });
+});

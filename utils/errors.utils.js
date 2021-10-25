@@ -1,11 +1,15 @@
+const UserModel = require("../models/userModel");
+
 module.exports.signUpErrors = (err) => {
-    let errors = { nom: "", prenom: "", poste: "", email: "", password: "" };
+    let errors = { nom: "", prenom: "", poste: "", email: "", password: ""};
 
     if (err.message.includes("nom")) errors.nom = "Saisir un nom"
 
     if (err.message.includes("prenom")) errors.prenom = "Saisir un prenom"
 
     if (err.message.includes("poste")) errors.poste = "Saisir un poste"
+
+
 
     if (err.code === 11000 && Object.keys(err.keyValue)[0].includes("email"))
         errors.email = "Cet email est déjà enregistré";

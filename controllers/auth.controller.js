@@ -30,6 +30,9 @@ module.exports.signIn = async (req, res) => {
 
     try {
         const user = await UserModel.login(email, password)
+        if (user.accept == false){
+            return res.status(200).json({message: 'L\'admin ne vous à pas accepté'})
+        }
         const token = createToken(user._id)
         res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge })
         res.status(200).json({ user: user._id })

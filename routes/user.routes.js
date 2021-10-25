@@ -23,6 +23,7 @@ router.get('/logout', authControler.logout)
 // PARTIE CONTROLE DES DONNÉES USERS
 //parcourir la base de donnée
 router.get('/', userController.getAllUsers)
+router.get('/waiting', userController.getUsersNotAccept)
 // Retourne les information d'un user
 router.get('/:id', userController.userInfo)
 // Update le nom ou prenom ou photo
