@@ -1,0 +1,23 @@
+.liste-Add {
+  overflow-y: scroll;
+  height: 250px;
+}
+
+.searchBar {
+  margin-top: 15px;
+  width: 70%;
+}
+.liste-Add-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.results-add {
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

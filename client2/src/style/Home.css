@@ -1,0 +1,159 @@
+.home-page h1,
+.home-page h3,
+.home-page h2 {
+  text-align: center;
+  color: #508e9a;
+}
+
+.components-wrapper {
+  margin-left: 120px;
+  display: flex;
+  flex-direction: row;
+}
+
+.recherche-components {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  background-color: rgba(255, 255, 255, 0.533);
+  border-radius: 20px;
+  border: thick double #5d7f86;
+  width: 200px;
+
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.recherche-components {
+  display: flex;
+  flex-direction: column;
+}
+
+.conv-liste {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  background-color: rgba(255, 255, 255, 0.533);
+  border-radius: 20px;
+  border: thick double #5d7f86;
+  width: 200px;
+  margin-top: 20px;
+
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.fav-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+  max-height: 100px;
+  max-width: 200px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 20px;
+
+  background-color: rgba(255, 255, 255, 0.533);
+  border-radius: 20px;
+  border: thick double #5d7f86;
+}
+
+.liste-fav {
+  display: flex;
+  flex-direction: row;
+  max-width: 200px;
+  overflow-x: scroll;
+  margin-bottom: -10px;
+  height: 150px;
+}
+
+.fav-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: rgba(255, 255, 255, 0.533);
+  border-radius: 20px;
+  border: solid 2px #5d7f86;
+  cursor: pointer;
+  position: relative;
+}
+
+.fav-component:hover {
+  background-color: rgba(255, 255, 255, 0.793);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.553);
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.container-img-fav {
+  position: relative;
+}
+.icon-fav {
+  position: absolute;
+  top: 55%;
+  left: 2%;
+}
+
+.searchBar {
+  width: 100%;
+  border: none;
+  background-color: #5d7f8600;
+  border-bottom: solid 1px #5d7f86;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.description {
+  background-color: rgba(255, 255, 255, 0.533);
+  border-radius: 20px;
+  border: thick double #5d7f86;
+  min-height: 100px;
+  width: 700px;
+  margin-left: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.resultat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results {
+  padding: 20px;
+  width: 120px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: solid 2px #5d7f86;
+  cursor: pointer;
+}
+
+.results:hover {
+  background-color: rgba(255, 255, 255, 0.793);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.553);
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.infos {
+  text-align: center;
+}

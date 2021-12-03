@@ -5,9 +5,10 @@ import { useDispatch } from "react-redux";
 
 import axios from "axios";
 import { getUser } from "./actions/user.action";
+// import { getAllUsers } from "./actions/users.action";
 
 function App() {
-  const [user, setUid] = useState(null);
+  const [user, setUid] = useState();
   const dispatch = useDispatch();
 
   useEffect(() => {

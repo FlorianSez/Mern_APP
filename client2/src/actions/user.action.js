@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const GET_USER = "GET_USER";
 export const UPLOAD_PHOTO = "UPLOAD_PHOTO";
-export const UPDATE_PRENOM = "UPDATE_PRENOM"
+export const UPDATE_PRENOM = "UPDATE_PRENOM";
 export const UPDATE_NOM = "UPDATE_NOM";
 export const UPDATE_ACCEPT = "UPDATE_ACCEPT";
 export const UPDATE_REJECT = "UPDATE_REJECT";
@@ -34,65 +34,65 @@ export const uploadPhoto = (data, user) => {
 };
 
 export const updatePrenom = (user, prenom) => {
-    return (dispatch) => {
-        return axios({
-            method: 'put',
-            url: `${process.env.REACT_APP_API_URL}api/user/`+ user,
-            data: {
-                prenom
-            }
-        })
-        .then((res)=>{
-            dispatch({type: UPDATE_PRENOM, payload: prenom})
-        })
-        .catch((err)=> console.log(err))
-    }
-}
+  return (dispatch) => {
+    return axios({
+      method: "put",
+      url: `${process.env.REACT_APP_API_URL}api/user/` + user,
+      data: {
+        prenom,
+      },
+    })
+      .then((res) => {
+        dispatch({ type: UPDATE_PRENOM, payload: prenom });
+      })
+      .catch((err) => console.log(err));
+  };
+};
 
 export const updateNom = (user, nom) => {
-    return (dispatch) => {
-        return axios({
-            method: 'put',
-            url: `${process.env.REACT_APP_API_URL}api/user/`+ user,
-            data: {
-                nom
-            }
-        })
-        .then((res)=>{
-            dispatch({type: UPDATE_NOM, payload: nom})
-        })
-        .catch((err)=> console.log(err))
-    }
-}
+  return (dispatch) => {
+    return axios({
+      method: "put",
+      url: `${process.env.REACT_APP_API_URL}api/user/` + user,
+      data: {
+        nom,
+      },
+    })
+      .then((res) => {
+        dispatch({ type: UPDATE_NOM, payload: nom });
+      })
+      .catch((err) => console.log(err));
+  };
+};
 
 export const updateAccept = (idCible, accept) => {
   return (dispatch) => {
-    return axios ({
-      method: 'put',
-      url: `${process.env.REACT_APP_API_URL}api/user/`+ idCible,
+    return axios({
+      method: "put",
+      url: `${process.env.REACT_APP_API_URL}api/user/` + idCible,
       data: {
-        accept
-      }
+        accept,
+      },
     })
-    .then((res) => {
-      dispatch({type: UPDATE_ACCEPT, payload: accept})
-    })
-    .catch((err)=>console.log(err))
-  }
-}
+      .then((res) => {
+        dispatch({ type: UPDATE_ACCEPT, payload: accept });
+      })
+      .catch((err) => console.log(err));
+  };
+};
 
 export const updateReject = (idCible, reject) => {
   return (dispatch) => {
-    return axios ({
-      method: 'put',
-      url: `${process.env.REACT_APP_API_URL}api/user/`+ idCible,
+    return axios({
+      method: "put",
+      url: `${process.env.REACT_APP_API_URL}api/user/` + idCible,
       data: {
-        reject
-      }
+        reject,
+      },
     })
-    .then((res) => {
-      dispatch({type: UPDATE_REJECT, payload: reject})
-    })
-    .catch((err)=>console.log(err))
-  }
-}
+      .then((res) => {
+        dispatch({ type: UPDATE_REJECT, payload: reject });
+      })
+      .catch((err) => console.log(err));
+  };
+};

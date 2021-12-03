@@ -1,0 +1,104 @@
+.pageReunion {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageReunion h1,
+h2,
+h3,
+h4 {
+  color: #5d7f86;
+}
+
+.creeReunion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  border: thick double #5d7f86;
+  background-color: rgba(255, 255, 255, 0.533);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.creationWrapper input {
+  margin-right: 20px;
+  background: none;
+  border: none;
+  border-bottom: solid 2px #5d7f86;
+}
+
+.all-reunions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.reunionsOrganiseWrapper,
+.waitingReunionsWrapper,
+.reunionsAcceptWrapper,
+.reunionsRejectWrapper {
+  border-radius: 20px;
+  border: thick double #5d7f86;
+  background-color: rgba(255, 255, 255, 0.533);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  max-width: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+  width: 319px;
+}
+
+.all-reunions-wrapper {
+  border-top: solid 2px #5d7f86;
+}
+
+.reunion-create {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.reu-descr {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.liste-participant {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.result-liste {
+  height: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.result-liste .participants {
+  margin-right: 5px;
+}
+
+.Accept-Refuse {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}

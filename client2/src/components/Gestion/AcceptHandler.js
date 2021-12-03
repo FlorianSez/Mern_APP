@@ -1,14 +1,21 @@
-import { useDispatch, useSelector } from "react-redux";
-import { updateAccept, updateReject } from "../../actions/user.action";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import {
+  // getAllUsers,
+  updateAccept,
+  updateReject,
+} from "../../actions/user.action";
+// import { getAllUsers } from "../../actions/users.action";
 
 const AcceptHandler = ({ idToAccept }) => {
-  const userData = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
 
   const handleAccept = () => {
-      dispatch(updateAccept(idToAccept, true));
-      dispatch(updateReject(idToAccept, false))
+    dispatch(updateAccept(idToAccept, true));
+    dispatch(updateReject(idToAccept, false));
   };
+
+  useEffect(() => {});
 
   return (
     <>

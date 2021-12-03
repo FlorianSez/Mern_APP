@@ -7,6 +7,7 @@ import Message from "../components/Chat/Message";
 import LeftNav from "../components/LeftNav";
 import "../style/Conversation.css";
 import { io } from "socket.io-client";
+import Fav from "../components/Home/Fav";
 
 const Conversation = () => {
   const userData = useSelector((state) => state.userReducer);
@@ -14,10 +15,28 @@ const Conversation = () => {
   const [currentChat, setCurrentChat] = useState(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const [favConv, setFavConv] = useState([]);
 
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const socket = useRef();
   const scrollRef = useRef();
+
+  useEffect(() => {
+    const getFavConv = async () => {
+      try {
+        const res = await axios({
+          method: "get",
+          url:
+            `${process.env.REACT_APP_API_URL}api/conversation/fav/` +
+            userData?._id,
+        });
+        setFavConv(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getFavConv();
+  }, [userData]);
 
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
@@ -31,14 +50,15 @@ const Conversation = () => {
   }, []);
 
   useEffect(() => {
-      arrivalMessage &&
-      currentChat?.members.includes(arrivalMessage.sender) && setMessages((prev) => [...prev, arrivalMessage])
-    }, [arrivalMessage, currentChat])
+    arrivalMessage &&
+      currentChat?.members.includes(arrivalMessage.sender) &&
+      setMessages((prev) => [...prev, arrivalMessage]);
+  }, [arrivalMessage, currentChat]);
 
   useEffect(() => {
     socket.current.emit("sendUser", userData._id);
-    socket.current.on("getUsers", (users) => {
-      console.log(users);
+    socket.current.on("getUsersWaiting", (users) => {
+      // console.log(users);
     });
   });
 
@@ -58,7 +78,7 @@ const Conversation = () => {
     getConversation();
   }, [userData._id]);
 
-  console.log(currentChat);
+  // console.log(currentChat);
 
   useEffect(() => {
     const getMessages = async () => {
@@ -76,7 +96,7 @@ const Conversation = () => {
     getMessages();
   }, [currentChat]);
 
-  console.log(messages);
+  // console.log(messages);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -162,7 +182,13 @@ const Conversation = () => {
         </div>
         <div className="chatOnline">
           <div className="chatOnlineWrapper">
-            <ChatOnline />
+            {favConv.map((f) => {
+              return (
+                <div key={f._id}>
+                  <Fav fav={f} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

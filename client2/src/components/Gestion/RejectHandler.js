@@ -3,18 +3,16 @@ import { useDispatch } from "react-redux";
 import { updateAccept, updateReject } from "../../actions/user.action";
 
 const RejectHandler = ({ idToReject }) => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const handleDelete = () => {
-        dispatch(updateAccept(idToReject, false))
-        dispatch(updateReject(idToReject, true));
-    };
+  const handleDelete = () => {
+    dispatch(updateAccept(idToReject, false));
+    dispatch(updateReject(idToReject, true));
+  };
 
   return (
-      <>
-    <button onClick={handleDelete}>
-      &#x2717;
-    </button>
+    <>
+      <button onClick={handleDelete}>&#x2717;</button>
     </>
   );
 };

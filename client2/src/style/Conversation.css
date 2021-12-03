@@ -1,108 +1,108 @@
 .messenger {
-    height: calc(100vh - 60px);
-    display: flex;
-    width: calc(100% - 170px);
-    margin-left: 100px;
+  height: calc(100vh - 60px);
+  display: flex;
+  width: calc(100% - 170px);
+  margin-left: 100px;
 }
 
 .chatMenu {
-    width: 500px;
+  width: 500px;
 }
 
 .chatBox {
-    width: 1200px;
+  width: 1200px;
 }
 
 .chatOnlineWrapper {
-    width: 200px;
+  width: 200px;
 }
 
 .chatBoxWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
 }
 
 .up {
-    height: 100%;
-    overflow-y: scroll;
-    padding-right: 10px;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 10px;
 }
 
 .bottom {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .messageInput {
-    width: 80%;
-    height: 90px;
-    padding: 10px;
-    border: solid 1px #5d7f86;
-    border-radius: 5px;
+  width: 80%;
+  height: 90px;
+  padding: 10px;
+  border: solid 1px #5d7f86;
+  border-radius: 5px;
 }
 
 .submitMessButton {
-    width: 70px;
-    height: 40px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.533);
-    border: solid 1px #5d7f86;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 70px;
+  height: 40px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.533);
+  border: solid 1px #5d7f86;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .chatOnline {
-    width: 400px;
+  width: 400px;
 }
 
-.chatMenuWrapper, .chatBoxWrapper, .chatOnlineWrapper {
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.533);
-    height: 100%;
-    min-height: 700px;
-
-    
+.chatMenuWrapper,
+.chatBoxWrapper,
+.chatOnlineWrapper {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.533);
+  height: 100%;
+  min-height: 700px;
 }
 
 .chatMenuWrapper {
-    border-top-left-radius: 20px;
-    border-left: thick double #5d7f86;
-    border-top: thick double #5d7f86;
-    border-bottom: thick double #5d7f86;
-    border-right: solid 3px #5d7f86;
+  border-top-left-radius: 20px;
+  border-left: thick double #5d7f86;
+  border-top: thick double #5d7f86;
+  border-bottom: thick double #5d7f86;
+  border-right: solid 3px #5d7f86;
 }
 
 .chatBoxWrapper {
-    border-top: thick double #5d7f86;
-    border-bottom: thick double #5d7f86;
-    border-bottom: thick double #5d7f86;
+  border-top: thick double #5d7f86;
+  border-bottom: thick double #5d7f86;
+  border-bottom: thick double #5d7f86;
 }
 
 .chatOnlineWrapper {
-    border-top-right-radius: 20px;
-    border-right: thick double #5d7f86;
-    border-top: thick double #5d7f86;
-    border-bottom: thick double #5d7f86;
-    border-left: solid 3px #5d7f86;
+  border-top-right-radius: 20px;
+  border-right: thick double #5d7f86;
+  border-top: thick double #5d7f86;
+  border-bottom: thick double #5d7f86;
+  border-left: solid 3px #5d7f86;
 }
 
 .chatMenuInput {
-    width: 100%;
-    border: none;
-    background-color: rgba(255, 255, 255, 0);
-    border-bottom: 2px solid #5d7f86;
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom: 2px solid #5d7f86;
 }
 
 .noConversation {
-    position: absolute;
-    top: 20%;
-    font-size: 40px;
-    text-align: center;
-    color: #829598;
-    cursor: default;
-    right: 24%;
+  position: absolute;
+  top: 20%;
+  font-size: 40px;
+  text-align: center;
+  color: #829598;
+  cursor: default;
+  right: 24%;
 }

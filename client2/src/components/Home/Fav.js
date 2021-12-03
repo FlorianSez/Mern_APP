@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import "../../style/Chat.css";
 
-const Chat = ({ conversation }) => {
-  const [user, setUser] = useState([]);
+const Fav = ({ fav }) => {
   const userData = useSelector((state) => state.userReducer);
+  const [userFav, setUserFav] = useState("");
+  // console.log(fav);
 
   useEffect(() => {
-    const userIdConv = conversation.members.find((m) => m !== userData._id);
+    const userIdConv = fav.members.find((m) => m !== userData._id);
 
     // console.log(userIdConv);
 
@@ -18,22 +18,23 @@ const Chat = ({ conversation }) => {
           method: "get",
           url: `${process.env.REACT_APP_API_URL}api/user/` + userIdConv,
         });
-        setUser(res.data);
+        setUserFav(res.data);
       } catch (err) {
         console.log(err);
       }
     };
     getUser();
-  }, [userData, conversation]);
+  }, [userData, fav]);
 
   return (
-    <div className="conv">
-      <img className="convImg" src={user.photo} alt="" />
-      <span className="convName">
-        {user.prenom} {user.nom}{" "}
-      </span>
+    <div className="fav-component">
+      <div className="container-img-fav">
+        <img className="convImg" src={userFav.photo} alt="" />
+        <img className="icon-fav" src="./logo/fav.png" width="17px" alt="" />
+      </div>
+      <div className="prenom-fav">{userFav.prenom}</div>
     </div>
   );
 };
 
-export default Chat;
+export default Fav;

@@ -1,14 +1,17 @@
 const mongoose = require("mongoose");
 
 const convSchema = new mongoose.Schema(
-    {
-        members: {
-            type: Array,
-        },
+  {
+    members: {
+      type: Array,
     },
-    { timestamps: true }
+    favoris: {
+      type: [String],
+    },
+  },
+  { timestamps: true }
 );
 
-const ConvModel = mongoose.model('conv', convSchema)
+const ConvModel = mongoose.model("conv", convSchema);
 
 module.exports = ConvModel;
